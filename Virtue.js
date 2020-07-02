@@ -286,4 +286,12 @@ class Virtue {
             return day + "th";
         }
     }
+
+    vtYear() {
+
+        let newDate = new Date();
+        let year = newDate.getUTCFullYear();
+        return year;
+        
+    }
 }
