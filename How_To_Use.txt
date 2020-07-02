@@ -1,0 +1,7 @@
+How to use Virtue Dates:
+
+Create a new object
+
+let vt = new Virtue();
+
+Now you can call all Date methods on the object
