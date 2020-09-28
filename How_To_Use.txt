@@ -4,4 +4,4 @@ Create a new instance of the Virtue object
 
 let vt = new Virtue();
 
-Now you can call all Date methods on the object
+Now you can call all Date methods
