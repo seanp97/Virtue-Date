@@ -1,6 +1,6 @@
 How to use Virtue Dates:
 
-Create a new object
+Create a new instance of the Virtue object
 
 let vt = new Virtue();
 
