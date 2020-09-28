@@ -166,16 +166,12 @@ class Virtue {
         else {
             AmPm = "PM";
         }
-        
+
         if (second < 10) {
             second = "0" + second;
         }
 
-        if (format.toLowerCase() == "ISO".toLowerCase()) {
-
-        }
-        
-        else {
+        if (!format.toLowerCase() == "ISO".toLowerCase()) {
             if (hour == 13) {
                 hour = "1";
             }
