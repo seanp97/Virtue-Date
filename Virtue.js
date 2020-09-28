@@ -166,6 +166,10 @@ class Virtue {
         else {
             AmPm = "PM";
         }
+        
+        if (second < 10) {
+            second = "0" + second;
+        }
 
         if (format.toLowerCase() == "ISO".toLowerCase()) {
 
