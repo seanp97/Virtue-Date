@@ -171,6 +171,10 @@ class Virtue {
             second = "0" + second;
         }
 
+        if (minute < 10) {
+            minute = "0" + minute;
+        }
+
         if (!format.toLowerCase() == "ISO".toLowerCase()) {
             if (hour == 13) {
                 hour = "1";
