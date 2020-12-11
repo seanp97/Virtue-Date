@@ -1,4 +1,3 @@
-
 class Virtue {
 
     vtDate(format, date) {
@@ -10,142 +9,142 @@ class Virtue {
 
         this.format = format;
         this.date = date;
-        let year;
-        let day;
-        let month;
+        this.year;
+        this.day;
+        this.month;
         format = format.toLowerCase();
 
         if (format == "UK".toLowerCase()) {
-            year = date.substring(6, 10);
-            day = date.substring(0, 2);
-            month = date.substring(3, 5);
-            if (day.includes("-") || day.includes("/")) {
-                day = date.substring(0, 1);
+            this.year = this.date.substring(6, 10);
+            this.day = this.date.substring(0, 2);
+            this.month = this.date.substring(3, 5);
+            if (this.day.includes("-") || this.day.includes("/")) {
+                this.day = this.date.substring(0, 1);
             }
         }
 
-        if (format == "USA".toLowerCase() || format == "US".toLowerCase()) {
-            year = date.substring(6, 10);
-            day = date.substring(3, 5);
-            month = date.substring(0, 2);
-            if (day.includes("-") || day.includes("/")) {
-                day = date.substring(0, 1);
+        if (this.format == "USA".toLowerCase() || this.format == "US".toLowerCase()) {
+            this.year = this.date.substring(6, 10);
+            this.day = this.date.substring(3, 5);
+            this.month = this.date.substring(0, 2);
+            if (this.day.includes("-") || this.day.includes("/")) {
+                this.day = this.date.substring(0, 1);
             }
         }
 
-        let daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-        let newDate = new Date(parseInt(year), parseInt(month -1), parseInt(day));
-        let dayName = daysOfWeek[newDate.getDay()];
+        this.daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        this.newDate = new Date(parseInt(this.year), parseInt(this.month -1), parseInt(this.day));
+        this.dayName = this.daysOfWeek[this.newDate.getDay()];
 
-        if (month == "01") {
-            month = "January";
+        if (this.month == "01") {
+            this.month = "January";
         }
-        if (month == "02") {
-            month = "February";
+        if (this.month == "02") {
+            this.month = "February";
         }
-        if (month == "03") {
-            month = "March";
+        if (this.month == "03") {
+            this.month = "March";
         }
-        if (month == "04") {
-            month = "April";
+        if (this.month == "04") {
+            this.month = "April";
         }
-        if (month == "05") {
-            month = "May";
+        if (this.month == "05") {
+            this.month = "May";
         }
-        if (month == "06") {
-            month = "June";
+        if (this.month == "06") {
+            this.month = "June";
         }
-        if (month == "07") {
-            month = "July";
+        if (this.month == "07") {
+            this.month = "July";
         }
-        if (month == "08") {
-            month = "August";
+        if (this.month == "08") {
+            this.month = "August";
         }
-        if (month == "09") {
-            month = "September";
+        if (this.month == "09") {
+            this.month = "September";
         }
-        if (month == "10") {
-            month = "October";
+        if (this.month == "10") {
+            this.month = "October";
         }
-        if (month == "11") {
-            month = "November";
+        if (this.month == "11") {
+            this.month = "November";
         }
-        if (month == "12") {
-            month = "December";
+        if (this.month == "12") {
+            this.month = "December";
         }
 
-        if (day == 1 || day == 21 || day == 31) {
-            return dayName + " " + day + "st " + month + " " + year;
+        if (this.day == 1 || this.day == 21 || this.day == 31) {
+            return this.dayName + " " + this.day + "st " + this.month + " " + this.year;
         }
-        if (day == 2 || day == 22) {
-            return dayName + " " + day + "nd " + month + " " + year;
+        if (this.day == 2 || this.day == 22) {
+            return this.dayName + " " + this.day + "nd " + this.month + " " + this.year;
         }
-        if (day == 3 || day == 23) {
-            return dayName + " " + day + "rd " + month + " " + year;
+        if (this.day == 3 || this.day == 23) {
+            return this.dayName + " " + this.day + "rd " + this.month + " " + this.year;
         }
-        if (day == 4 || day == 5 || day == 6 || day == 7 || day == 8 || day == 9 || day == 10 || day == 12 || day == 13 || day || 14 || day == 15 || day == 16 || day == 17 || day == 18 || day == 19 || day == 20 || day == 24 || day == 25 || day == 26 || day == 27 || day == 28 || day == 29 || day == 30) {
-            return dayName + " " + day + "th " + month + " " + year;
+        if (this.day == 4 || this.day == 5 || this.day == 6 || this.day == 7 || this.day == 8 || this.day == 9 || this.day == 10 || this.day == 12 || this.day == 13 || this.day || 14 || this.day == 15 || this.day == 16 || this.day == 17 || this.day == 18 || this.day == 19 || this.day == 20 || this.day == 24 || this.day == 25 || this.day == 26 || this.day == 27 || this.day == 28 || this.day == 29 || this.day == 30) {
+            return this.dayName + " " + this.day + "th " + this.month + " " + this.year;
         }
     }
 
     vtNowDate() {
 
-        let newDate = new Date();
-        let year = newDate.getFullYear();
-        let month = newDate.getMonth();
-        let day = newDate.getDate();
+        this.newDate = new Date();
+        this.year = this.newDate.getFullYear();
+        this.month = this.newDate.getMonth();
+        this.day = this.newDate.getDate();
 
-        let daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-        let dayName = daysOfWeek[newDate.getDay()];
+        this.daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        this.dayName = this.daysOfWeek[this.newDate.getDay()];
 
-        if (month == 0) {
-            month = "January";
+        if (this.month == 0) {
+            this.month = "January";
         }
-        if (month == 1) {
-            month = "February";
+        if (this.month == 1) {
+            this.month = "February";
         }
-        if (month == 2) {
-            month = "March";
+        if (this.month == 2) {
+            this.month = "March";
         }
-        if (month == 3) {
-            month = "April";
+        if (this.month == 3) {
+            this.month = "April";
         }
-        if (month == 4) {
-            month = "May";
+        if (this.month == 4) {
+            this.month = "May";
         }
-        if (month == 5) {
-            month = "June";
+        if (this.month == 5) {
+            this.month = "June";
         }
-        if (month == 6) {
-            month = "July";
+        if (this.month == 6) {
+            this.month = "July";
         }
-        if (month == 7) {
-            month = "August";
+        if (this.month == 7) {
+            this.month = "August";
         }
-        if (month == 8) {
-            month = "September";
+        if (this.month == 8) {
+            this.month = "September";
         }
-        if (month == 9) {
-            month = "October";
+        if (this.month == 9) {
+            this.month = "October";
         }
-        if (month == 10) {
-            month = "November";
+        if (this.month == 10) {
+            this.month = "November";
         }
-        if (month == 11) {
-            month = "December";
+        if (this.month == 11) {
+            this.month = "December";
         }
 
-        if (day == 1 || day == 21 || day == 31) {
-            return dayName + " " + day + "st " + month + " " + year;
+        if (this.day == 1 || this.day == 21 || this.day == 31) {
+            return this.dayName + " " + this.day + "st " + this.month + " " + this.year;
         }
-        if (day == 2 || day == 22) {
-            return dayName + " " + day + "nd " + month + " " + year;
+        if (this.day == 2 || this.day == 22) {
+            return this.dayName + " " + this.day + "nd " + this.month + " " + this.year;
         }
-        if (day == 3 || day == 23) {
-            return dayName + " " + day + "rd " + month + " " + year;
+        if (this.day == 3 || this.day == 23) {
+            return this.dayName + " " + this.day + "rd " + this.month + " " + this.year;
         }
-        if (day == 4 || day == 5 || day == 6 || day == 7 || day == 8 || day == 9 || day == 10 || day == 12 || day == 13 || day || 14 || day == 15 || day == 16 || day == 17 || day == 18 || day == 19 || day == 20 || day == 24 || day == 25 || day == 26 || day == 27 || day == 28 || day == 29 || day == 30) {
-            return dayName + " " + day + "th " + month + " " + year;
+        if (this.day == 4 || this.day == 5 || this.day == 6 || this.day == 7 || this.day == 8 || this.day == 9 || this.day == 10 || this.day == 12 || this.day == 13 || this.day || 14 || this.day == 15 || this.day == 16 || this.day == 17 || this.day == 18 || this.day == 19 || this.day == 20 || this.day == 24 || this.day == 25 || this.day == 26 || this.day == 27 || this.day == 28 || this.day == 29 || this.day == 30) {
+            return this.dayName + " " + this.day + "th " + this.month + " " + this.year;
         }
     }
 
@@ -154,148 +153,164 @@ class Virtue {
         //Add ISO as argument to get 24 hour format
 
         this.format = format;
-        let newDate = new Date();
-        let hour = newDate.getHours();
-        let minute = newDate.getMinutes();
-        let second = newDate.getSeconds();
-        let AmPm;
+        this.newDate = new Date();
+        this.hour = this.newDate.getHours();
+        this.minute = this.newDate.getMinutes();
+        this.second = this.newDate.getSeconds();
+        this.AmPm;
 
-        if (hour < 12) {
-            AmPm = "AM";
+        if (this.hour < 12) {
+            this.AmPm = "AM";
         }
         else {
-            AmPm = "PM";
+            this.AmPm = "PM";
         }
 
-        if (second < 10) {
-            second = "0" + second;
+        if (this.second < 10) {
+            this.second = "0" + this.second;
         }
 
-        if (minute < 10) {
-            minute = "0" + minute;
+        if (this.minute < 10) {
+            this.minute = "0" + this.minute;
         }
 
         if (!format.toLowerCase() == "ISO".toLowerCase()) {
-            if (hour == 13) {
-                hour = "1";
+            if (this.hour == 13) {
+                this.hour = "1";
             }
-            if (hour == 14) {
-                hour = "2";
+            if (this.hour == 14) {
+                this.hour = "2";
             }
-            if (hour == 15) {
-                hour = "3";
+            if (this.hour == 15) {
+                this.hour = "3";
             }
-            if (hour == 16) {
-                hour = "4";
+            if (this.hour == 16) {
+                this.hour = "4";
             }
-            if (hour == 17) {
-                hour = "5";
+            if (this.hour == 17) {
+                this.hour = "5";
             }
-            if (hour == 18) {
-                hour = "6";
+            if (this.hour == 18) {
+                this.hour = "6";
             }
-            if (hour == 19) {
-                hour = "7";
+            if (this.hour == 19) {
+                this.hour = "7";
             }
-            if (hour == 20) {
-                hour = "8";
+            if (this.hour == 20) {
+                this.hour = "8";
             }
-            if (hour == 21) {
-                hour = "9";
+            if (this.hour == 21) {
+                this.hour = "9";
             }
-            if (hour == 22) {
-                hour = "10";
+            if (this.hour == 22) {
+                this.hour = "10";
             }
-            if (hour == 23) {
-                hour = "11";
+            if (this.hour == 23) {
+                this.hour = "11";
             }
-            if (hour == 24) {
-                hour = "12";
+            if (this.hour == 24) {
+                this.hour = "12";
             }
         }
 
-        let nowTime = hour + ":" + minute + ":" + second + AmPm;
-        return nowTime;
+        this.nowTime = this.hour + ":" + this.minute + ":" + this.second + this.AmPm;
+        return this.nowTime;
     }
 
     vtMonth() {
 
-        let newDate = new Date();
-        let month = newDate.getMonth();
+        this.newDate = new Date();
+        this.month = this.newDate.getMonth();
 
-        if (month == 0) {
-            month = "January";
+        if (this.month == 0) {
+            this.month = "January";
         }
-        if (month == 1) {
-            month = "February";
+        if (this.month == 1) {
+            this.month = "February";
         }
-        if (month == 2) {
-            month = "March";
+        if (this.month == 2) {
+            this.month = "March";
         }
-        if (month == 3) {
-            month = "April";
+        if (this.month == 3) {
+            this.month = "April";
         }
-        if (month == 4) {
-            month = "May";
+        if (this.month == 4) {
+            this.month = "May";
         }
-        if (month == 5) {
-            month = "June";
+        if (this.month == 5) {
+            this.month = "June";
         }
-        if (month == 6) {
-            month = "July";
+        if (this.month == 6) {
+            this.month = "July";
         }
-        if (month == 7) {
-            month = "August";
+        if (this.month == 7) {
+            this.month = "August";
         }
-        if (month == 8) {
-            month = "September";
+        if (this.month == 8) {
+            this.month = "September";
         }
-        if (month == 9) {
-            month = "October";
+        if (this.month == 9) {
+            this.month = "October";
         }
-        if (month == 10) {
-            month = "November";
+        if (this.month == 10) {
+            this.month = "November";
         }
-        if (month == 11) {
-            month = "December";
+        if (this.month == 11) {
+            this.month = "December";
         }
 
-        return month;
+        return this.month;
     }
 
     vtDayName() {
 
-        let newDate = new Date();
-        let daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-        let dayName = daysOfWeek[newDate.getDay()];
-        return dayName;
+        this.newDate = new Date();
+        this.daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        this.dayName = this.daysOfWeek[this.newDate.getDay()];
+        return this.dayName;
 
     }
 
     vtDay() {
 
-        let newDate = new Date();
-        let day = newDate.getDate();
+        this.newDate = new Date();
+        this.day = this.newDate.getDate();
         
-        if (day == 1 || day == 21 || day == 31) {
-            return day + "st";
+        if (this.day == 1 || this.day == 21 || this.day == 31) {
+            return this.day + "st";
         }
-        if (day == 2 || day == 22) {
-            return day + "nd";
+        if (this.day == 2 || this.day == 22) {
+            return this.day + "nd";
         }
-        if (day == 3 || day == 23) {
-            return day + "rd";
+        if (this.day == 3 || this.day == 23) {
+            return this.day + "rd";
         }
-        if (day == 4 || day == 5 || day == 6 || day == 7 || day == 8 || day == 9 || day == 10 || day == 12 || day == 13 || day || 14 || day == 15 || day == 16 || day == 17 || day == 18 || day == 19 || day == 20 || day == 24 || day == 25 || day == 26 || day == 27 || day == 28 || day == 29 || day == 30) {
-            return day + "th";
+        if (this.day == 4 || this.day == 5 || this.day == 6 || this.day == 7 || this.day == 8 || this.day == 9 || this.day == 10 || this.day == 12 || this.day == 13 || this.day || 14 || this.day == 15 || this.day == 16 || this.day == 17 || this.day == 18 || this.day == 19 || this.day == 20 || this.day == 24 || this.day == 25 || this.day == 26 || this.day == 27 || this.day == 28 || this.day == 29 || this.day == 30) {
+            return this.day + "th";
         }
     }
 
     vtYear() {
 
-        let newDate = new Date();
-        let year = newDate.getUTCFullYear();
-        return year;
+        this.newDate = new Date();
+        this.year = this.newDate.getUTCFullYear();
+        return this.year;
         
     }
+
+    vtYearDifference(dateOne, dateTwo) {
+
+        //Whichever argument is higher will minus the second argument
+        
+        parseInt(this.dateOne = dateOne);
+        parseInt(this.dateTwo = dateTwo);
+
+        if(this.dateOne > this.dateTwo) {
+            return this.dateOne - this.dateTwo;
+        }
+        else {
+            return this.dateTwo - this.dateOne;
+        }
+    }
+    
 }
