@@ -85,6 +85,7 @@ class Virtue {
         if (this.day == 4 || this.day == 5 || this.day == 6 || this.day == 7 || this.day == 8 || this.day == 9 || this.day == 10 || this.day == 12 || this.day == 13 || this.day || 14 || this.day == 15 || this.day == 16 || this.day == 17 || this.day == 18 || this.day == 19 || this.day == 20 || this.day == 24 || this.day == 25 || this.day == 26 || this.day == 27 || this.day == 28 || this.day == 29 || this.day == 30) {
             return this.dayName + " " + this.day + "th " + this.month + " " + this.year;
         }
+        
     }
 
     vtNowDate() {
@@ -146,6 +147,7 @@ class Virtue {
         if (this.day == 4 || this.day == 5 || this.day == 6 || this.day == 7 || this.day == 8 || this.day == 9 || this.day == 10 || this.day == 12 || this.day == 13 || this.day || 14 || this.day == 15 || this.day == 16 || this.day == 17 || this.day == 18 || this.day == 19 || this.day == 20 || this.day == 24 || this.day == 25 || this.day == 26 || this.day == 27 || this.day == 28 || this.day == 29 || this.day == 30) {
             return this.dayName + " " + this.day + "th " + this.month + " " + this.year;
         }
+        
     }
 
     vtTime(format = "") {
@@ -215,6 +217,7 @@ class Virtue {
 
         this.nowTime = this.hour + ":" + this.minute + ":" + this.second + this.AmPm;
         return this.nowTime;
+        
     }
 
     vtMonth() {
@@ -260,6 +263,7 @@ class Virtue {
         }
 
         return this.month;
+        
     }
 
     vtDayName() {
@@ -288,6 +292,7 @@ class Virtue {
         if (this.day == 4 || this.day == 5 || this.day == 6 || this.day == 7 || this.day == 8 || this.day == 9 || this.day == 10 || this.day == 12 || this.day == 13 || this.day || 14 || this.day == 15 || this.day == 16 || this.day == 17 || this.day == 18 || this.day == 19 || this.day == 20 || this.day == 24 || this.day == 25 || this.day == 26 || this.day == 27 || this.day == 28 || this.day == 29 || this.day == 30) {
             return this.day + "th";
         }
+        
     }
 
     vtYear() {
