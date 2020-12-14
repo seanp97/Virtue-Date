@@ -297,20 +297,5 @@ class Virtue {
         return this.year;
         
     }
-
-    vtYearDifference(dateOne, dateTwo) {
-
-        //Whichever argument is higher will minus the second argument
-        
-        parseInt(this.dateOne = dateOne);
-        parseInt(this.dateTwo = dateTwo);
-
-        if(this.dateOne > this.dateTwo) {
-            return this.dateOne - this.dateTwo;
-        }
-        else {
-            return this.dateTwo - this.dateOne;
-        }
-    }
     
 }
